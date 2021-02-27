@@ -13,8 +13,8 @@ const App = () => {
 
         <div className='nav-links'>
           {/* Links to navigate us Home (`/`) and Shop (`/pizza`) */}
-          <button className = 'homeButton'><Link to="/">Home </Link></button>
-          <button className = 'orderButton'><Link to="/pizza">Order</Link></button>
+          <button id = 'homeButton' className = 'homeButton'><Link to="/">Home </Link></button>
+          <button id = 'orderButton' className = 'orderButton'><Link to="/pizza">Order</Link></button>
         </div>
 
       </nav>
