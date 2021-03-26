@@ -1,4 +1,5 @@
 import React from 'react'
+import './Form.css'
 
 function Form(props) {  
     const {
@@ -22,16 +23,18 @@ function Form(props) {
     }
     
     return (
-      <form className='form container' onSubmit={onSubmit}>
+      <form className='formContainer' onSubmit={onSubmit}>
+
+        <h1>Make Your Pizza</h1>
 
           <div className='errors'>
           {/* RENDER THE VALIDATION ERRORS HERE */}
           <div>{errors.name}</div>
         </div>
 
-          <div className='form-group inputs'>
+          <div className='formGroupInputs'>
               {/* ////////// TEXT INPUTS ////////// */}
-                <label>Name&nbsp;
+                <label>Name:&nbsp;
                 <input
                     value={values.name}
                     onChange={onChange}
@@ -40,7 +43,9 @@ function Form(props) {
                 />
                 </label>
                 {/* ////////// CHECKBOXES ////////// */}
-                <label>Size
+
+                <div className = 'sizeContainer'>
+                <label>Size:&nbsp;
                     <select
                         onChange={onChange}
                         value={values.size}
@@ -53,9 +58,13 @@ function Form(props) {
                         <option value='extraLarge'>Extra Large</option>
                     </select>
                     </label>
-
+                    </div>
                 {/* ////////// CHECKBOXES ////////// */}
-                <label>Pepperoni
+
+            <fieldset className = 'toppingsContainer'>
+                <legend>TOPPINGS</legend>
+                <div className = 'topToppings'>
+                <label>pepperoni:&nbsp;
                     <input 
                         type='checkbox'
                         name='pepperoni'
@@ -63,7 +72,7 @@ function Form(props) {
                         checked={values.pepperoni}
                     />
                 </label>
-                <label>bacon
+                <label>bacon:&nbsp;
                     <input 
                         type='checkbox'
                         name='bacon'
@@ -71,7 +80,7 @@ function Form(props) {
                         checked={values.bacon}
                     />
                 </label>
-                <label>spinach
+                <label>spinach:&nbsp;
                     <input 
                         type='checkbox'
                         name='spinach'
@@ -79,7 +88,7 @@ function Form(props) {
                         checked={values.spinach}
                     />
                 </label>
-                <label>mushrooms
+                <label>mushrooms:&nbsp;
                     <input 
                         type='checkbox'
                         name='mushrooms'
@@ -87,10 +96,91 @@ function Form(props) {
                         checked={values.mushrooms}
                     />
                 </label>
+                </div>
+                <div className = 'middleToppings'>
+                <label>onion:&nbsp;
+                    <input 
+                        type='checkbox'
+                        name='onion'
+                        onChange={onChange}
+                        checked={values.onion}
+                    />
+                </label>
+                <label>pineapple:&nbsp;
+                    <input 
+                        type='checkbox'
+                        name='pineapple'
+                        onChange={onChange}
+                        checked={values.pineapple}
+                    />
+                </label>
+                <label>ham:&nbsp;
+                    <input 
+                        type='checkbox'
+                        name='ham'
+                        onChange={onChange}
+                        checked={values.ham}
+                    />
+                </label>
+                <label>chicken:&nbsp;
+                    <input 
+                        type='checkbox'
+                        name='chicken'
+                        onChange={onChange}
+                        checked={values.chicken}
+                    />
+                </label>
+                </div>
+                <div className = 'bottomToppings'>
+                <label>bellpepper:&nbsp;
+                    <input 
+                        type='checkbox'
+                        name='bellpepper'
+                        onChange={onChange}
+                        checked={values.bellpepper}
+                    />
+                </label>
+                <label>sardines:&nbsp;
+                    <input 
+                        type='checkbox'
+                        name='sardines'
+                        onChange={onChange}
+                        checked={values.sardines}
+                    />
+                </label>
+                <label>olive:&nbsp;
+                    <input 
+                        type='checkbox'
+                        name='olive'
+                        onChange={onChange}
+                        checked={values.olive}
+                    />
+                </label>
+                <label>beef:&nbsp;
+                    <input 
+                        type='checkbox'
+                        name='beef'
+                        onChange={onChange}
+                        checked={values.beef}
+                    />
+                </label>  
+                </div>
+                </fieldset>
+                <div className = "specialInstructions">
+                <label>Special Instructions:&nbsp;
+                <input
+                    value={values.specialInstructions}
+                    onChange={onChange}
+                    name='specialInstructions'
+                    type='text'
+                />
+                </label>
+                </div>
           </div>
           <div className = 'formSubmit'>
             {/* DISABLED THE BUTTON */}
-          <button disabled={disabled}>Add to Order</button>
+          <button id = 'addToOrder' disabled={disabled}>Add to Order</button>
+          
           </div>
       </form>
     );

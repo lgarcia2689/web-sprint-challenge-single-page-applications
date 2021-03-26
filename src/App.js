@@ -1,4 +1,3 @@
-// import React,{useState} from "react";
 import React from "react";
 import { Route, Link, Switch } from 'react-router-dom'
 import Home from './Home'
@@ -16,8 +15,8 @@ const App = () => {
           <button id = 'homeButton' className = 'homeButton'><Link to="/">Home </Link></button>
           <button id = 'orderButton' className = 'orderButton'><Link to="/pizza">Order</Link></button>
         </div>
-
       </nav>
+
         <Switch>
           <Route path="/pizza">
             <Pizza/>
@@ -26,6 +25,7 @@ const App = () => {
             <Home />
           </Route>
         </Switch>
+        
       </div>
   );
 };

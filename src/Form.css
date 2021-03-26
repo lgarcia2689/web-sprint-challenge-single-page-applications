@@ -1,0 +1,39 @@
+.formContainer{
+    margin-left: 20px;
+    border:2px solid black;
+    border-radius: 20px;
+    width: 700px;
+    background-color: rgba(255, 68, 0, 0.644);
+    border-style: dashed
+}
+.formGroupInputs{
+    margin-left: 20px;
+}
+.sizeContainer{
+    margin-top: 20px;
+}
+.toppingsContainer{
+    margin-top: 20px;
+    width: 450px;
+    margin-bottom: 20px;
+}
+.topToppings{
+    margin: 20px;
+    margin-left: 20px;
+}
+.middleToppings{
+    margin: 20px;
+}
+.bottomToppings{
+    margin: 20px; 
+} 
+.specialInstructions{
+    margin-bottom: 20px;
+}
+.formSubmit{
+    margin-left: 200px;
+    margin-bottom: 10px;
+}
+h1{
+    text-align: center;
+}

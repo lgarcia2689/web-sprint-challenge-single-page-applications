@@ -18,6 +18,14 @@ const initialFormValues = {
   bacon: false,
   spinach: false,
   mushrooms: false,
+  onion: false,
+  pineapple: false,
+  ham: false,
+  chicken: false,
+  bellpepper: false,
+  sardines: false,
+  olive: false,
+  beef: false,
 }
 
 const initialFormErrors = {
@@ -37,7 +45,7 @@ function App(){
 
 
   const postNewOrder= newOrder => {
-    axios.post(newOrder)
+    axios.post('https://reqres.in/api/users',newOrder)
     .then(res => {
       setOrder([res.data, ...order])
     })
@@ -70,16 +78,14 @@ function App(){
     }
     postNewOrder(newOrder)
   }
+  
 
   useEffect(() => {
     formSchema.isValid(formValues).then(valid => setDisabled(!valid))
   }, [formValues])
 
-
-
   return (
     <div className='container'>
-      <h1>Make You Pizza</h1>
       <Form
       values={formValues}
       change={inputChange}
